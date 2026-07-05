@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressum — Fraumünsterpost Zürich</title>
-<meta name="description" content="Impressum der Website Fraumünsterpost Zürich.">
+<title>Datenschutz — Fraumünsterpost Zürich</title>
+<meta name="description" content="Datenschutzerklärung der Website Fraumünsterpost Zürich.">
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,6 @@ body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-heigh
 h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;line-height:1.12}
 a{color:inherit}
 .wrap{max-width:900px;margin:0 auto;padding:0 6vw}
-.eyebrow{display:inline-flex;align-items:center;gap:14px;text-transform:uppercase;letter-spacing:.34em;font-size:.72rem;font-weight:500;color:var(--gold)}
-.eyebrow::before{content:"";width:44px;height:1px;background:var(--gold)}
 
 /* Header */
 header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(21,42,37,.96);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(0,0,0,.2)}
@@ -54,16 +52,18 @@ body.nav-open .burger span:nth-child(3){top:11px;transform:rotate(-45deg)}
 }
 
 /* Page hero */
-.page-hero{background:radial-gradient(120% 100% at 50% 0%,#28473f 0%,var(--green-deep) 70%);color:var(--cream);padding:170px 0 80px;text-align:left;position:relative}
+.page-hero{background:radial-gradient(120% 100% at 50% 0%,#28473f 0%,var(--green-deep) 70%);color:var(--cream);padding:170px 0 80px;position:relative}
 .page-hero::after{content:"";position:absolute;inset:22px;border:1px solid rgba(214,189,138,.18);pointer-events:none}
 .page-hero h1{font-size:clamp(2.4rem,6vw,4.2rem);text-transform:uppercase;letter-spacing:.05em;margin-top:20px}
 .page-hero .kicker{text-transform:uppercase;letter-spacing:.5em;font-size:.72rem;color:var(--gold-light)}
+.page-hero .sub{margin-top:18px;max-width:60ch;color:rgba(245,240,230,.8)}
 
 /* Content */
 .legal{padding:clamp(70px,9vw,120px) 0}
 .legal section{margin-bottom:54px}
 .legal h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--green);margin-bottom:16px}
 .legal h2 .no{color:var(--gold);font-size:.8em;margin-right:14px}
+.legal h3{font-family:var(--sans);font-weight:500;font-size:.95rem;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin:24px 0 10px}
 .legal p{color:#3d4a44;margin-bottom:14px;max-width:70ch}
 .legal ul{margin:0 0 14px 20px;color:#3d4a44}
 .legal ul li{margin-bottom:8px}
@@ -112,7 +112,10 @@ footer nav a:hover{color:var(--gold-light)}
 <div class="page-hero">
   <div class="wrap">
     <span class="kicker">Rechtliches</span>
-    <h1>Impressum</h1>
+    <h1>Datenschutz</h1>
+    <p class="sub">Der Schutz Ihrer Personendaten ist uns wichtig. Diese Erklärung informiert darüber,
+      welche Daten beim Besuch dieser Website bearbeitet werden — gestützt auf das schweizerische
+      Datenschutzgesetz (revDSG) und, soweit anwendbar, die DSGVO.</p>
   </div>
 </div>
 
@@ -120,65 +123,82 @@ footer nav a:hover{color:var(--gold-light)}
   <div class="wrap">
 
     <section>
-      <h2><span class="no">01</span>Verantwortlich für diese Website</h2>
+      <h2><span class="no">01</span>Verantwortliche Stelle</h2>
       <div class="card">
-        <span class="lbl">Betreiberin</span>
+        <span class="lbl">Verantwortlich</span>
         <b>[Firma / Eigentümerschaft eintragen]</b><br>
-        [Strasse und Nummer]<br>
-        [PLZ Ort], Schweiz
-        <span class="lbl">Kontakt</span>
-        E-Mail: vermietung@ihre-domain.ch<br>
-        Telefon: +41 44 000 00 00
-        <span class="lbl">Handelsregister / UID</span>
-        UID: CHE-000.000.000 <em>(Platzhalter)</em>
+        [Strasse und Nummer], [PLZ Ort], Schweiz
+        <span class="lbl">Datenschutz-Kontakt</span>
+        E-Mail: datenschutz@ihre-domain.ch
       </div>
-      <div class="hint">Hinweis: Die Angaben in eckigen Klammern sind Platzhalter und müssen vor dem
-        produktiven Einsatz durch die tatsächlichen Angaben der verantwortlichen Gesellschaft ersetzt werden.</div>
+      <div class="hint">Hinweis: Platzhalter in eckigen Klammern vor dem produktiven Einsatz durch die
+        tatsächlichen Angaben ersetzen. Diese Vorlage ersetzt keine Rechtsberatung.</div>
     </section>
 
     <section>
-      <h2><span class="no">02</span>Vermarktung</h2>
-      <div class="card">
-        <span class="lbl">Vermietung &amp; Anfragen</span>
-        Vermarktungsteam Fraumünsterpost<br>
-        Münsterhof · 8001 Zürich<br>
-        E-Mail: vermietung@ihre-domain.ch
-      </div>
+      <h2><span class="no">02</span>Welche Daten wir bearbeiten</h2>
+      <h3>Hosting &amp; Server-Logdaten</h3>
+      <p>Diese Website wird über GitHub Pages (GitHub, Inc., USA) bereitgestellt. Beim Aufruf der
+        Website werden durch den Hosting-Anbieter technisch bedingt Daten wie IP-Adresse, Datum und
+        Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp und Betriebssystem in Server-Logs
+        verarbeitet. Diese Bearbeitung ist für den sicheren und stabilen Betrieb der Website
+        erforderlich (berechtigtes Interesse). Dabei können Daten in die USA übermittelt werden;
+        GitHub ist nach dem EU-U.S. bzw. Swiss-U.S. Data Privacy Framework zertifiziert.</p>
+      <h3>Kontaktaufnahme</h3>
+      <p>Wenn Sie uns über das Kontaktformular oder per E-Mail Angaben übermitteln (Name, Firma,
+        E-Mail-Adresse, Flächenwunsch, Nachricht), bearbeiten wir diese ausschliesslich zur
+        Beantwortung Ihrer Anfrage und für die weitere Kommunikation im Rahmen der Vermietung.
+        Die Angabe erfolgt freiwillig; ohne die Pflichtangaben können wir Ihre Anfrage nicht
+        bearbeiten.</p>
+      <h3>Keine Cookies, kein Tracking</h3>
+      <p>Diese Website setzt selbst keine Cookies und verwendet keine Analyse- oder
+        Tracking-Dienste (kein Google Analytics, keine Werbe-Pixel).</p>
     </section>
 
     <section>
-      <h2><span class="no">03</span>Haftungsausschluss</h2>
-      <p>Alle Inhalte dieser Website wurden mit grösstmöglicher Sorgfalt erstellt. Die Betreiberin
-        übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der
-        bereitgestellten Inhalte. Flächenangaben, Verfügbarkeiten, Visualisierungen und Termine
-        sind unverbindlich und können sich ohne Ankündigung ändern; massgeblich sind ausschliesslich
-        die vertraglichen Vereinbarungen.</p>
-      <p>Haftungsansprüche gegen die Betreiberin wegen Schäden materieller oder immaterieller Art,
-        die aus dem Zugriff auf die Website, der Nutzung oder Nichtnutzung der veröffentlichten
-        Informationen oder durch technische Störungen entstanden sind, werden im gesetzlich
-        zulässigen Umfang ausgeschlossen.</p>
+      <h2><span class="no">03</span>Eingebundene Dienste Dritter</h2>
+      <p>Zur Darstellung der Website werden Inhalte von Drittanbietern geladen. Dabei wird Ihre
+        IP-Adresse technisch bedingt an den jeweiligen Anbieter übermittelt:</p>
+      <ul>
+        <li><b>Google Fonts</b> (Google Ireland Ltd.) — Nachladen der Schriftarten «Cormorant Garamond» und «Jost».</li>
+        <li><b>jsDelivr CDN</b> (Prospect One) — Nachladen der 3D-Bibliothek Three.js.</li>
+        <li><b>Unsplash CDN</b> (Unsplash Inc., Kanada/USA) — Auslieferung der verwendeten Symbolbilder.</li>
+      </ul>
+      <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer ansprechenden und performanten
+        Darstellung der Website. Es werden dabei von uns keine Profile gebildet.</p>
     </section>
 
     <section>
-      <h2><span class="no">04</span>Verweise auf Drittinhalte (Links)</h2>
-      <p>Verweise und Links auf Websites Dritter liegen ausserhalb des Verantwortungsbereichs der
-        Betreiberin. Der Zugriff und die Nutzung solcher Websites erfolgen auf eigene Gefahr der
-        Nutzerinnen und Nutzer. Es wird jegliche Verantwortung für Inhalte Dritter abgelehnt.</p>
+      <h2><span class="no">04</span>Weitergabe und Aufbewahrung</h2>
+      <p>Eine Weitergabe Ihrer Personendaten erfolgt nur, soweit dies zur Bearbeitung Ihrer Anfrage
+        nötig ist (z.B. an das beauftragte Vermarktungsteam), wir gesetzlich dazu verpflichtet sind
+        oder Sie eingewilligt haben. Anfragedaten bewahren wir nur so lange auf, wie es für die
+        Bearbeitung und allfällige Anschlusskommunikation erforderlich ist, längstens jedoch bis zum
+        Wegfall des Zwecks oder Ablauf gesetzlicher Aufbewahrungspflichten.</p>
     </section>
 
     <section>
-      <h2><span class="no">05</span>Urheberrechte</h2>
-      <p>Die Urheber- und alle anderen Rechte an Inhalten, Texten, Grafiken und Gestaltung dieser
-        Website gehören ausschliesslich der Betreiberin oder den jeweils genannten Rechteinhabern.
-        Verwendete Symbolbilder stammen von Unsplash und unterliegen der Unsplash-Lizenz.
-        Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Rechteinhaber
-        im Voraus einzuholen.</p>
+      <h2><span class="no">05</span>Ihre Rechte</h2>
+      <p>Sie haben im Rahmen des anwendbaren Datenschutzrechts insbesondere das Recht auf:</p>
+      <ul>
+        <li>Auskunft über die zu Ihrer Person bearbeiteten Daten,</li>
+        <li>Berichtigung unrichtiger Daten,</li>
+        <li>Löschung oder Einschränkung der Bearbeitung,</li>
+        <li>Widerspruch gegen die Bearbeitung,</li>
+        <li>Datenherausgabe bzw. -übertragung, soweit gesetzlich vorgesehen.</li>
+      </ul>
+      <p>Wenden Sie sich dazu an die oben genannte Datenschutz-Kontaktadresse. In der Schweiz können
+        Sie sich zudem an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB)
+        wenden; in der EU an die zuständige Aufsichtsbehörde.</p>
     </section>
 
     <section>
-      <h2><span class="no">06</span>Anwendbares Recht</h2>
-      <p>Es gilt ausschliesslich schweizerisches Recht. Gerichtsstand ist — soweit gesetzlich
-        zulässig — Zürich.</p>
+      <h2><span class="no">06</span>Datensicherheit &amp; Änderungen</h2>
+      <p>Die Übertragung dieser Website erfolgt verschlüsselt über HTTPS. Wir treffen angemessene
+        technische und organisatorische Massnahmen, um Ihre Daten gegen Verlust und unberechtigten
+        Zugriff zu schützen.</p>
+      <p>Wir können diese Datenschutzerklärung jederzeit anpassen. Es gilt die jeweils auf dieser
+        Seite publizierte Fassung. Stand: <span id="stand">Juli 2026</span>.</p>
       <a class="backlink" href="index.html">← Zurück zur Startseite</a>
     </section>
 
