@@ -3,33 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressum — Fraumünsterpost Zürich</title>
-<meta name="description" content="Impressum der Website Fraumünsterpost Zürich.">
-<meta name="robots" content="noindex, follow">
+<title>Fraumünsterpost — Historisches Wahrzeichen. Zukunft der Arbeit.</title>
+<meta name="description" content="Rund 6'100 m² flexible, hochwertige Büroflächen in einem historischen Wahrzeichen im Herzen von Zürich. Neueröffnung 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#1e3a33;--green-deep:#152a25;--cream:#f5f0e6;--cream-2:#ede6d6;
-  --gold:#b3945e;--gold-light:#d6bd8a;--ink:#1c2320;--grey:#6f7a74;
+  --green:#1e3a33;
+  --green-deep:#152a25;
+  --green-soft:#2b4c43;
+  --cream:#f5f0e6;
+  --cream-2:#ede6d6;
+  --gold:#b3945e;
+  --gold-light:#d6bd8a;
+  --ink:#1c2320;
+  --grey:#6f7a74;
   --line:rgba(30,58,51,.16);
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost','Helvetica Neue',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;font-weight:300}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;font-weight:300;overflow-x:hidden}
 ::selection{background:var(--gold);color:#fff}
 h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;line-height:1.12}
+img{max-width:100%;display:block}
 a{color:inherit}
-.wrap{max-width:900px;margin:0 auto;padding:0 6vw}
+
+/* ---------- Utility ---------- */
+.wrap{max-width:1240px;margin:0 auto;padding:0 6vw}
 .eyebrow{display:inline-flex;align-items:center;gap:14px;text-transform:uppercase;letter-spacing:.34em;font-size:.72rem;font-weight:500;color:var(--gold)}
 .eyebrow::before{content:"";width:44px;height:1px;background:var(--gold)}
+.section{padding:clamp(80px,11vw,150px) 0;position:relative}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.22,.8,.24,1),transform .9s cubic-bezier(.22,.8,.24,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
 
-/* Header */
-header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(21,42,37,.96);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(0,0,0,.2)}
-header .bar{display:flex;align-items:center;justify-content:space-between;padding:16px 6vw}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 34px;border:1px solid var(--gold);color:var(--gold-light);text-decoration:none;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;font-weight:500;background:transparent;cursor:pointer;transition:background .35s,color .35s}
+.btn:hover{background:var(--gold);color:#fff}
+.btn.solid{background:var(--gold);color:#fff}
+.btn.solid:hover{background:var(--gold-light);border-color:var(--gold-light);color:var(--green-deep)}
+.btn.dark{border-color:var(--green);color:var(--green)}
+.btn.dark:hover{background:var(--green);color:var(--cream)}
+.btn .arr{transition:transform .35s}
+.btn:hover .arr{transform:translateX(6px)}
+
+/* ---------- Header ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,box-shadow .4s}
+header .bar{display:flex;align-items:center;justify-content:space-between;padding:26px 6vw;transition:padding .4s}
+header.scrolled{background:rgba(21,42,37,.94);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(0,0,0,.25)}
+header.scrolled .bar{padding:14px 6vw}
 .logo{display:flex;flex-direction:column;text-decoration:none;color:var(--cream);line-height:1.05}
 .logo .l1{font-family:var(--serif);font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase}
 .logo .l2{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-light);margin-top:4px}
@@ -53,29 +77,164 @@ body.nav-open .burger span:nth-child(3){top:11px;transform:rotate(-45deg)}
   .burger{display:block}
 }
 
-/* Page hero */
-.page-hero{background:radial-gradient(120% 100% at 50% 0%,#28473f 0%,var(--green-deep) 70%);color:var(--cream);padding:170px 0 80px;text-align:left;position:relative}
-.page-hero::after{content:"";position:absolute;inset:22px;border:1px solid rgba(214,189,138,.18);pointer-events:none}
-.page-hero h1{font-size:clamp(2.4rem,6vw,4.2rem);text-transform:uppercase;letter-spacing:.05em;margin-top:20px}
-.page-hero .kicker{text-transform:uppercase;letter-spacing:.5em;font-size:.72rem;color:var(--gold-light)}
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;color:var(--cream);overflow:hidden;background:var(--green-deep)}
+.hero .bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center;opacity:.35;filter:saturate(.6)}
+#hero3d{position:absolute;inset:0;width:100%;height:100%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,33,28,.55) 0%,rgba(15,33,28,.35) 45%,rgba(15,33,28,.9) 100%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;width:100%;padding:140px 6vw 110px;text-align:center}
+.hero .kicker{text-transform:uppercase;letter-spacing:.5em;font-size:.74rem;color:var(--gold-light);margin-bottom:28px}
+.hero h1{font-size:clamp(2.6rem,7.4vw,6rem);letter-spacing:.05em;text-transform:uppercase;font-weight:500}
+.hero h1 em{font-style:italic;color:var(--gold-light);text-transform:none;letter-spacing:0}
+.hero .sub{max-width:640px;margin:30px auto 0;font-size:1.05rem;color:rgba(245,240,230,.85)}
+.hero .actions{margin-top:44px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.hero .scroll-hint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:2;color:rgba(245,240,230,.6);font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px}
+.hero .scroll-hint::after{content:"";width:1px;height:52px;background:linear-gradient(var(--gold-light),transparent);animation:drip 2.4s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero .frame{position:absolute;inset:22px;border:1px solid rgba(214,189,138,.25);pointer-events:none;z-index:1}
+@media(max-width:640px){.hero .frame{inset:12px}}
 
-/* Content */
-.legal{padding:clamp(70px,9vw,120px) 0}
-.legal section{margin-bottom:54px}
-.legal h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--green);margin-bottom:16px}
-.legal h2 .no{color:var(--gold);font-size:.8em;margin-right:14px}
-.legal p{color:#3d4a44;margin-bottom:14px;max-width:70ch}
-.legal ul{margin:0 0 14px 20px;color:#3d4a44}
-.legal ul li{margin-bottom:8px}
-.card{background:#fff;border:1px solid var(--line);padding:34px 36px;margin:20px 0}
-.card b{font-weight:500;color:var(--green)}
-.card .lbl{display:block;font-size:.64rem;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);margin:16px 0 4px}
-.card .lbl:first-child{margin-top:0}
-.hint{border-left:2px solid var(--gold);background:var(--cream-2);padding:18px 24px;font-size:.9rem;color:#4a554f;margin:20px 0}
-.backlink{display:inline-flex;align-items:center;gap:12px;margin-top:30px;padding:14px 30px;border:1px solid var(--green);color:var(--green);text-decoration:none;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;transition:background .35s,color .35s}
-.backlink:hover{background:var(--green);color:var(--cream)}
+/* ---------- Fact band ---------- */
+.facts{background:var(--green);color:var(--cream)}
+.facts .grid{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(214,189,138,.2)}
+.fact{padding:56px 30px;border-right:1px solid rgba(214,189,138,.2);text-align:center}
+.fact .num{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.6rem);color:var(--gold-light)}
+.fact .num sup{font-size:.45em}
+.fact .lbl{text-transform:uppercase;letter-spacing:.28em;font-size:.66rem;margin-top:10px;color:rgba(245,240,230,.75)}
+@media(max-width:900px){.facts .grid{grid-template-columns:repeat(2,1fr)}.fact{border-top:1px solid rgba(214,189,138,.2)}}
 
-/* Footer */
+/* ---------- Intro ---------- */
+.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);align-items:center}
+.intro h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:22px 0 26px}
+.intro p{color:#3d4a44;margin-bottom:18px;max-width:56ch}
+.intro .sig{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--green);margin-top:8px}
+.photo-card{position:relative;aspect-ratio:4/5;overflow:hidden;box-shadow:30px 30px 0 var(--cream-2)}
+.photo-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,.8,.24,1)}
+.photo-card:hover img{transform:scale(1.05)}
+.photo-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(21,42,37,.75))}
+.photo-card .badge{position:absolute;left:26px;bottom:26px;color:var(--cream);z-index:2}
+.photo-card .badge b{font-family:var(--serif);font-weight:500;font-size:1.6rem;display:block}
+.photo-card .badge span{font-size:.64rem;text-transform:uppercase;letter-spacing:.3em;color:var(--gold-light)}
+@media(max-width:900px){.intro-grid{grid-template-columns:1fr}}
+
+/* ---------- History ---------- */
+.history{background:var(--green-deep);color:var(--cream);padding-bottom:0}
+.history h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:22px 0 16px}
+.history .lead{max-width:62ch;color:rgba(245,240,230,.8)}
+.timeline{margin-top:70px;position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:34px}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:8px;height:1px;background:rgba(214,189,138,.3)}
+.t-item{position:relative;padding-top:38px}
+.t-item::before{content:"";position:absolute;top:2px;left:0;width:13px;height:13px;border:1px solid var(--gold-light);transform:rotate(45deg);background:var(--green-deep)}
+.t-item .year{font-family:var(--serif);font-size:2rem;color:var(--gold-light)}
+.t-item h3{font-size:1.05rem;font-family:var(--sans);font-weight:500;text-transform:uppercase;letter-spacing:.14em;margin:10px 0 8px}
+.t-item p{font-size:.92rem;color:rgba(245,240,230,.72)}
+.hist-strip{margin-top:80px;height:clamp(220px,32vw,420px);background-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center 65%;position:relative}
+.hist-strip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--green-deep),transparent 30%,transparent 70%,var(--cream))}
+@media(max-width:980px){.timeline{grid-template-columns:1fr;gap:44px;padding-left:34px}
+.timeline::before{left:6px;right:auto;top:0;bottom:0;width:1px;height:auto}
+.t-item{padding-top:0}.t-item::before{left:-34px;top:8px}}
+
+/* ---------- Spaces ---------- */
+.spaces h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:22px 0 16px}
+.space-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+.s-card{background:#fff;border:1px solid var(--line);position:relative;transition:transform .45s,box-shadow .45s;overflow:hidden}
+.s-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(30,58,51,.14)}
+.s-card .img{aspect-ratio:16/10;overflow:hidden}
+.s-card .img img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.s-card:hover .img img{transform:scale(1.06)}
+.s-card .body{padding:32px 30px 36px}
+.s-card .no{font-family:var(--serif);font-size:.95rem;color:var(--gold);letter-spacing:.2em}
+.s-card h3{font-size:1.55rem;margin:12px 0 10px;color:var(--green)}
+.s-card p{font-size:.94rem;color:#4a554f}
+.s-card .m2{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+.s-card .m2 b{font-family:var(--serif);font-size:1.7rem;font-weight:500;color:var(--green)}
+.s-card .m2 span{font-size:.64rem;text-transform:uppercase;letter-spacing:.26em;color:var(--grey)}
+@media(max-width:980px){.space-cards{grid-template-columns:1fr}}
+
+.floor-table{margin-top:64px;border:1px solid var(--line);background:#fff}
+.floor-table .row{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr .9fr;padding:20px 30px;border-bottom:1px solid var(--line);align-items:center;transition:background .3s}
+.floor-table .row:last-child{border-bottom:0}
+.floor-table .row:not(.head):hover{background:var(--cream)}
+.floor-table .head{background:var(--green);color:var(--cream);text-transform:uppercase;font-size:.66rem;letter-spacing:.26em}
+.floor-table .fl{font-family:var(--serif);font-size:1.25rem;color:var(--green)}
+.floor-table .val{font-size:.95rem;color:#3d4a44}
+.tag{display:inline-block;padding:6px 14px;font-size:.62rem;text-transform:uppercase;letter-spacing:.2em;border:1px solid var(--gold);color:var(--gold)}
+.tag.res{border-color:#9aa5a0;color:#9aa5a0}
+@media(max-width:860px){.floor-table .row{grid-template-columns:1fr 1fr;gap:8px}.floor-table .head{display:none}}
+
+/* ---------- Fit-out ---------- */
+.fitout{background:var(--cream-2)}
+.fit-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(40px,6vw,90px);align-items:center}
+.fitout h2{font-size:clamp(2rem,4.4vw,3.2rem);margin:22px 0 22px}
+.fitout p{color:#3d4a44;margin-bottom:16px;max-width:56ch}
+.fit-list{margin-top:26px;display:grid;border-top:1px solid var(--line)}
+.fit-list li{list-style:none;display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font-size:.98rem}
+.fit-list li::before{content:"—";color:var(--gold);font-weight:600}
+.fit-visuals{display:grid;gap:22px}
+.plan-visual{aspect-ratio:4/3;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden;box-shadow:-30px 30px 0 rgba(179,148,94,.16)}
+.plan-visual svg{width:100%;height:100%}
+.fit-photo{aspect-ratio:16/9;overflow:hidden}
+.fit-photo img{width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.fit-grid{grid-template-columns:1fr}}
+
+/* ---------- Sustainability ---------- */
+.sustain{background:var(--green);color:var(--cream);overflow:hidden}
+.sustain h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:22px 0 16px}
+.sustain .lead{max-width:62ch;color:rgba(245,240,230,.8)}
+.sus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:60px}
+.sus-card{border:1px solid rgba(214,189,138,.3);padding:38px 28px;transition:background .4s,transform .4s}
+.sus-card:hover{background:rgba(214,189,138,.08);transform:translateY(-6px)}
+.sus-card .ico{width:52px;height:52px;margin-bottom:22px}
+.sus-card .ico svg{width:100%;height:100%;stroke:var(--gold-light);fill:none;stroke-width:1.3}
+.sus-card h3{font-family:var(--sans);font-weight:500;font-size:.95rem;text-transform:uppercase;letter-spacing:.18em;margin-bottom:10px}
+.sus-card p{font-size:.9rem;color:rgba(245,240,230,.72)}
+@media(max-width:980px){.sus-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.sus-grid{grid-template-columns:1fr}}
+
+/* ---------- Location ---------- */
+.location h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:22px 0 16px}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);margin-top:20px;align-items:start}
+.loc-grid p{color:#3d4a44;margin-bottom:16px;max-width:54ch}
+.loc-photo{aspect-ratio:16/10;overflow:hidden;margin-bottom:28px}
+.loc-photo img{width:100%;height:100%;object-fit:cover}
+.transit{border:1px solid var(--line);background:#fff}
+.transit .t-row{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid var(--line)}
+.transit .t-row:last-child{border-bottom:0}
+.transit .dest{font-size:.98rem}
+.transit .dest small{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.24em;color:var(--grey);margin-top:2px}
+.transit .time{font-family:var(--serif);font-size:1.6rem;color:var(--green)}
+.transit .time small{font-size:.55em;color:var(--gold)}
+.addr-card{margin-top:28px;background:var(--green);color:var(--cream);padding:34px;display:flex;gap:22px;align-items:center}
+.addr-card .pin{flex:0 0 40px}
+.addr-card .pin svg{stroke:var(--gold-light);fill:none;stroke-width:1.3;width:40px;height:40px}
+@media(max-width:900px){.loc-grid{grid-template-columns:1fr}}
+
+/* ---------- Quote ---------- */
+.quote{position:relative;text-align:center;color:var(--cream);background:var(--green-deep)}
+.quote .qbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center;opacity:.18}
+.quote .wrap{position:relative;z-index:2}
+.quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.4vw,2.5rem);max-width:900px;margin:0 auto;line-height:1.35}
+.quote .who{margin-top:30px;text-transform:uppercase;letter-spacing:.3em;font-size:.7rem;color:var(--gold-light)}
+.quote .mark{font-family:var(--serif);font-size:5rem;line-height:0;color:var(--gold-light);display:block;margin-bottom:34px}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--green-deep);color:var(--cream);border-top:1px solid rgba(214,189,138,.2)}
+.contact h2{font-size:clamp(2rem,4.4vw,3.4rem);margin:22px 0 18px}
+.con-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px)}
+.contact p{color:rgba(245,240,230,.8);max-width:52ch}
+.con-details{margin-top:34px;display:grid;gap:18px}
+.con-details div{display:flex;gap:16px;align-items:baseline;font-size:.98rem}
+.con-details b{font-weight:500;color:var(--gold-light);min-width:90px;text-transform:uppercase;font-size:.68rem;letter-spacing:.24em}
+form .field{margin-bottom:22px}
+form label{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.28em;color:var(--gold-light);margin-bottom:8px}
+form input,form textarea,form select{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(214,189,138,.4);color:var(--cream);padding:12px 2px;font-family:var(--sans);font-size:1rem;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus,form select:focus{border-color:var(--gold-light)}
+form select option{color:var(--ink)}
+form textarea{min-height:110px;resize:vertical}
+.form-note{font-size:.78rem;color:rgba(245,240,230,.55);margin:14px 0 24px}
+@media(max-width:900px){.con-grid{grid-template-columns:1fr}}
+
+/* ---------- Footer ---------- */
 footer{background:#0e1f1a;color:rgba(245,240,230,.65);padding:60px 6vw 40px}
 .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:center}
 footer .logo .l1{font-size:1.1rem}
@@ -83,15 +242,15 @@ footer nav{display:flex;gap:26px;flex-wrap:wrap}
 footer nav a{text-decoration:none;font-size:.7rem;text-transform:uppercase;letter-spacing:.24em}
 footer nav a:hover{color:var(--gold-light)}
 .foot-line{margin-top:40px;padding-top:24px;border-top:1px solid rgba(214,189,138,.15);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.72rem}
-.foot-line a{text-decoration:none}
-.foot-line a:hover{color:var(--gold-light)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 
-<header>
+<!-- ============ HEADER ============ -->
+<header id="header">
   <div class="bar">
-    <a class="logo" href="index.html" aria-label="Fraumünsterpost — Startseite">
+    <a class="logo" href="#top" aria-label="Fraumünsterpost — Startseite">
       <span class="l1">Fraumünsterpost</span>
       <span class="l2">Zürich · Seit 1898</span>
     </a>
@@ -99,113 +258,451 @@ footer nav a:hover{color:var(--gold-light)}
       <span></span><span></span><span></span>
     </button>
     <nav class="main" aria-label="Hauptnavigation">
-      <a href="index.html#geschichte">Geschichte</a>
-      <a href="index.html#flaechen">Flächen</a>
-      <a href="index.html#ausbau">Ausbau</a>
-      <a href="index.html#nachhaltigkeit">Nachhaltigkeit</a>
-      <a href="index.html#lage">Lage</a>
-      <a href="index.html#kontakt" class="cta">Besichtigung</a>
+      <a href="#geschichte">Geschichte</a>
+      <a href="#flaechen">Flächen</a>
+      <a href="#ausbau">Ausbau</a>
+      <a href="#nachhaltigkeit">Nachhaltigkeit</a>
+      <a href="#lage">Lage</a>
+      <a href="#kontakt" class="cta">Besichtigung</a>
     </nav>
   </div>
 </header>
 
-<div class="page-hero">
-  <div class="wrap">
-    <span class="kicker">Rechtliches</span>
-    <h1>Impressum</h1>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="bg" aria-hidden="true"></div>
+  <div id="hero3d" aria-hidden="true"></div>
+  <div class="veil"></div>
+  <div class="frame"></div>
+  <div class="hero-inner">
+    <p class="kicker reveal in">Münsterhof · Herz von Zürich</p>
+    <h1 class="reveal in d1">Fraumünster<em>post</em></h1>
+    <p class="sub reveal in d2">Ein historisches Wahrzeichen von 1898 wird zur Adresse für die Zukunft der Arbeit:
+      rund 6'100 m² flexible, hochwertige Büroflächen — nachhaltig saniert, Neueröffnung 2026.</p>
+    <div class="actions reveal in d3">
+      <a class="btn solid" href="#flaechen">Flächen entdecken <span class="arr">→</span></a>
+      <a class="btn" href="#geschichte">Die Geschichte <span class="arr">→</span></a>
+    </div>
   </div>
-</div>
+  <a class="scroll-hint" href="#willkommen">Entdecken</a>
+</section>
 
-<main class="legal">
-  <div class="wrap">
-
-    <section>
-      <h2><span class="no">01</span>Verantwortlich für diese Website</h2>
-      <div class="card">
-        <span class="lbl">Betreiberin</span>
-        <b>[Firma / Eigentümerschaft eintragen]</b><br>
-        [Strasse und Nummer]<br>
-        [PLZ Ort], Schweiz
-        <span class="lbl">Kontakt</span>
-        E-Mail: vermietung@ihre-domain.ch<br>
-        Telefon: +41 44 000 00 00
-        <span class="lbl">Handelsregister / UID</span>
-        UID: CHE-000.000.000 <em>(Platzhalter)</em>
-      </div>
-      <div class="hint">Hinweis: Die Angaben in eckigen Klammern sind Platzhalter und müssen vor dem
-        produktiven Einsatz durch die tatsächlichen Angaben der verantwortlichen Gesellschaft ersetzt werden.</div>
-    </section>
-
-    <section>
-      <h2><span class="no">02</span>Vermarktung</h2>
-      <div class="card">
-        <span class="lbl">Vermietung &amp; Anfragen</span>
-        Vermarktungsteam Fraumünsterpost<br>
-        Münsterhof · 8001 Zürich<br>
-        E-Mail: vermietung@ihre-domain.ch
-      </div>
-    </section>
-
-    <section>
-      <h2><span class="no">03</span>Haftungsausschluss</h2>
-      <p>Alle Inhalte dieser Website wurden mit grösstmöglicher Sorgfalt erstellt. Die Betreiberin
-        übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der
-        bereitgestellten Inhalte. Flächenangaben, Verfügbarkeiten, Visualisierungen und Termine
-        sind unverbindlich und können sich ohne Ankündigung ändern; massgeblich sind ausschliesslich
-        die vertraglichen Vereinbarungen.</p>
-      <p>Haftungsansprüche gegen die Betreiberin wegen Schäden materieller oder immaterieller Art,
-        die aus dem Zugriff auf die Website, der Nutzung oder Nichtnutzung der veröffentlichten
-        Informationen oder durch technische Störungen entstanden sind, werden im gesetzlich
-        zulässigen Umfang ausgeschlossen.</p>
-    </section>
-
-    <section>
-      <h2><span class="no">04</span>Verweise auf Drittinhalte (Links)</h2>
-      <p>Verweise und Links auf Websites Dritter liegen ausserhalb des Verantwortungsbereichs der
-        Betreiberin. Der Zugriff und die Nutzung solcher Websites erfolgen auf eigene Gefahr der
-        Nutzerinnen und Nutzer. Es wird jegliche Verantwortung für Inhalte Dritter abgelehnt.</p>
-    </section>
-
-    <section>
-      <h2><span class="no">05</span>Urheberrechte</h2>
-      <p>Die Urheber- und alle anderen Rechte an Inhalten, Texten, Grafiken und Gestaltung dieser
-        Website gehören ausschliesslich der Betreiberin oder den jeweils genannten Rechteinhabern.
-        Verwendete Symbolbilder stammen von Unsplash und unterliegen der Unsplash-Lizenz.
-        Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Rechteinhaber
-        im Voraus einzuholen.</p>
-    </section>
-
-    <section>
-      <h2><span class="no">06</span>Anwendbares Recht</h2>
-      <p>Es gilt ausschliesslich schweizerisches Recht. Gerichtsstand ist — soweit gesetzlich
-        zulässig — Zürich.</p>
-      <a class="backlink" href="index.html">← Zurück zur Startseite</a>
-    </section>
-
+<!-- ============ FACT BAND ============ -->
+<section class="facts" aria-label="Kennzahlen">
+  <div class="grid">
+    <div class="fact reveal"><div class="num"><span class="count" data-to="6100">0</span> m<sup>2</sup></div><div class="lbl">Bürofläche</div></div>
+    <div class="fact reveal d1"><div class="num"><span class="count" data-to="5">0</span></div><div class="lbl">Vollgeschosse</div></div>
+    <div class="fact reveal d2"><div class="num"><span class="count" data-to="1898">0</span></div><div class="lbl">Erbaut &amp; eröffnet</div></div>
+    <div class="fact reveal d3"><div class="num"><span class="count" data-to="2026">0</span></div><div class="lbl">Neueröffnung</div></div>
   </div>
-</main>
+</section>
 
+<!-- ============ INTRO ============ -->
+<section class="section intro" id="willkommen">
+  <div class="wrap intro-grid">
+    <div>
+      <span class="eyebrow reveal">Willkommen</span>
+      <h2 class="reveal d1">Historische Eleganz.<br>Modernste Arbeitswelt.</h2>
+      <p class="reveal d2">Im Herzen von Zürich, zwischen Limmat und Bahnhofstrasse, entsteht aus der ehemaligen
+        Hauptpost eine der exklusivsten Büroadressen der Stadt. Das markante Gebäude aus dem
+        19. Jahrhundert wird umfassend saniert und verbindet historische Substanz mit
+        zeitgemässer Infrastruktur.</p>
+      <p class="reveal d3">Ob kompakte Einheiten ab rund 390 m² oder grosszügige Etagen bis 1'490 m² —
+        die Flächen lassen sich flexibel auf die Bedürfnisse moderner Unternehmen zuschneiden.
+        Besonders eindrucksvoll: repräsentative Räume mit Galerieebenen und doppelter Raumhöhe.</p>
+      <p class="sig reveal d4">Ein Ort mit Geschichte. Und Zukunft.</p>
+    </div>
+    <div class="photo-card reveal d2">
+      <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1200&q=80" alt="Historische Architektur mit eindrucksvoller Fassade" loading="lazy">
+      <div class="badge"><span>Wahrzeichen</span><b>Anno 1898</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section class="section history" id="geschichte">
+  <div class="wrap">
+    <span class="eyebrow reveal">Geschichte</span>
+    <h2 class="reveal d1">Wo Zürich einst<br>die Welt erreichte.</h2>
+    <p class="lead reveal d2">Die Fraumünsterpost blickt auf eine bewegte Vergangenheit zurück: 1898 als Hauptpost
+      der Stadt eröffnet, war sie über Jahrzehnte der zentrale Knotenpunkt der Kommunikation.
+      Hier liefen Telegramme und Eilbriefe der legendären Rohrpost zusammen — und verbanden
+      Zürich in beeindruckendem Tempo mit der Welt.</p>
+    <div class="timeline">
+      <div class="t-item reveal"><div class="year">1898</div><h3>Eröffnung</h3><p>Das fünfte Zürcher Posthaus öffnet am Münsterhof seine Tore — und übernimmt die Rolle der städtischen Hauptpost.</p></div>
+      <div class="t-item reveal d1"><div class="year">1900er</div><h3>Rohrpost &amp; Telegramme</h3><p>Als Kommunikations-Drehscheibe verbindet das Haus die Stadt per Rohrpost, Telegraf und Eilzustellung.</p></div>
+      <div class="t-item reveal d2"><div class="year">1930</div><h3>Wachablösung</h3><p>Die neue Sihlpost übernimmt die Funktion der Hauptpost — die Fraumünsterpost bleibt Quartier-Institution.</p></div>
+      <div class="t-item reveal d3"><div class="year">2016</div><h3>Abschied der Post</h3><p>Nach fast 120 Jahren verlässt die Postfiliale das Gebäude. Ein neues Kapitel wird aufgeschlagen.</p></div>
+      <div class="t-item reveal d4"><div class="year">2026</div><h3>Neueröffnung</h3><p>Umfassend und nachhaltig saniert, kehrt das Wahrzeichen als exklusive Büroliegenschaft zurück.</p></div>
+    </div>
+  </div>
+  <div class="hist-strip" role="img" aria-label="Historische europäische Altstadt-Architektur"></div>
+</section>
+
+<!-- ============ SPACES ============ -->
+<section class="section spaces" id="flaechen">
+  <div class="wrap">
+    <span class="eyebrow reveal">Flächenangebot</span>
+    <h2 class="reveal d1">Rund 6'100 m² —<br>so flexibel wie Ihr Unternehmen.</h2>
+    <p class="reveal d2" style="max-width:62ch;color:#3d4a44">Fünf Vollgeschosse, mietbar pro Etage oder pro Gebäudeflügel.
+      Von der kompakten Einheit bis zur repräsentativen Etage mit Galerieebene und doppelter Raumhöhe.</p>
+
+    <div class="space-cards">
+      <article class="s-card reveal">
+        <div class="img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Helles, elegantes Büro mit grossen Fenstern" loading="lazy"></div>
+        <div class="body">
+          <div class="no">— 01</div>
+          <h3>Kompakte Einheiten</h3>
+          <p>Effiziente Büroeinheiten für Boutique-Firmen, Kanzleien und Family Offices — repräsentativ und diskret an bester Adresse.</p>
+          <div class="m2"><b>ab 390 m²</b><span>pro Einheit</span></div>
+        </div>
+      </article>
+      <article class="s-card reveal d1">
+        <div class="img"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80" alt="Grosszügige, offene Bürofläche" loading="lazy"></div>
+        <div class="body">
+          <div class="no">— 02</div>
+          <h3>Ganze Etagen</h3>
+          <p>Grosszügige, zusammenhängende Flächen mit flexiblen Grundrissen — ideal für wachsende Unternehmen und Hauptsitze.</p>
+          <div class="m2"><b>bis 1'490 m²</b><span>pro Geschoss</span></div>
+        </div>
+      </article>
+      <article class="s-card reveal d2">
+        <div class="img"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80" alt="Stilvolles Interieur mit hoher Decke" loading="lazy"></div>
+        <div class="body">
+          <div class="no">— 03</div>
+          <h3>Galerie-Etagen</h3>
+          <p>Die Prunkstücke des Hauses: Räume mit Galerieebenen und doppelter Raumhöhe schaffen ein inspirierendes Arbeitsumfeld.</p>
+          <div class="m2"><b>2-geschossig</b><span>Raumhöhe</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="floor-table reveal">
+      <div class="row head"><div>Geschoss</div><div>Fläche</div><div>Raumhöhe</div><div>Besonderheit</div><div>Status</div></div>
+      <div class="row"><div class="fl">4. OG</div><div class="val">ca. 1'050 m²</div><div class="val">hoch</div><div class="val">Dachgeschoss, Weitblick</div><div><span class="tag">verfügbar</span></div></div>
+      <div class="row"><div class="fl">3. OG</div><div class="val">ca. 1'490 m²</div><div class="val">klassisch</div><div class="val">flexible Grundrisse</div><div><span class="tag">verfügbar</span></div></div>
+      <div class="row"><div class="fl">2. OG</div><div class="val">ca. 1'440 m²</div><div class="val">klassisch</div><div class="val">teilbar pro Flügel</div><div><span class="tag">verfügbar</span></div></div>
+      <div class="row"><div class="fl">1. OG</div><div class="val">ca. 1'330 m²</div><div class="val">doppelt</div><div class="val">Galerie, Repräsentanz</div><div><span class="tag">verfügbar</span></div></div>
+      <div class="row"><div class="fl">EG</div><div class="val">ca. 790 m²</div><div class="val">doppelt</div><div class="val">historische Halle, Empfang</div><div><span class="tag res">auf Anfrage</span></div></div>
+    </div>
+
+    <div style="margin-top:44px" class="reveal">
+      <a class="btn dark" href="#kontakt">Exposé &amp; Factsheets anfragen <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIT-OUT ============ -->
+<section class="section fitout" id="ausbau">
+  <div class="wrap fit-grid">
+    <div class="fit-visuals">
+      <div class="plan-visual reveal" role="img" aria-label="Stilisierter Büro-Grundriss">
+        <svg viewBox="0 0 400 300">
+          <rect x="20" y="20" width="360" height="260" fill="none" stroke="#1e3a33" stroke-width="1.5"/>
+          <line x1="150" y1="20" x2="150" y2="180" stroke="#1e3a33"/>
+          <line x1="150" y1="180" x2="380" y2="180" stroke="#1e3a33"/>
+          <line x1="260" y1="20" x2="260" y2="180" stroke="#1e3a33" stroke-dasharray="6 5"/>
+          <rect x="42" y="44" width="56" height="26" fill="none" stroke="#b3945e"/>
+          <rect x="42" y="90" width="56" height="26" fill="none" stroke="#b3945e"/>
+          <rect x="42" y="136" width="56" height="26" fill="none" stroke="#b3945e"/>
+          <circle cx="318" cy="100" r="36" fill="none" stroke="#b3945e"/>
+          <circle cx="318" cy="100" r="3.5" fill="#b3945e"/>
+          <rect x="170" y="210" width="150" height="46" fill="none" stroke="#b3945e"/>
+          <text x="46" y="192" font-family="Jost,Arial" font-size="9" fill="#6f7a74" letter-spacing="2">FOKUS</text>
+          <text x="292" y="156" font-family="Jost,Arial" font-size="9" fill="#6f7a74" letter-spacing="2">MEETING</text>
+          <text x="174" y="270" font-family="Jost,Arial" font-size="9" fill="#6f7a74" letter-spacing="2">KOLLABORATION</text>
+        </svg>
+      </div>
+      <div class="fit-photo reveal d1">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" alt="Modernes, warmes Interieur mit hochwertiger Möblierung" loading="lazy">
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow reveal">Ausbau &amp; Musterplanung</span>
+      <h2 class="reveal d1">Nicht nur Raum.<br>Flexibilität.</h2>
+      <p class="reveal d2">Musterplanungen zeigen, wie sich die historischen Räume in effiziente, moderne
+        Arbeitswelten verwandeln lassen — von offenen Kollaborationszonen bis zu konzentrierten
+        Rückzugsräumen. Der Ausbau erfolgt individuell nach den Bedürfnissen der Mieterschaft.</p>
+      <ul class="fit-list">
+        <li class="reveal">Modulare Grundrisse — pro Etage oder pro Flügel mietbar</li>
+        <li class="reveal d1">Akustik-Konzept für konzentriertes Arbeiten</li>
+        <li class="reveal d2">Behagliches Raumklima dank modernster Gebäudetechnik</li>
+        <li class="reveal d3">Zeitgemässe Möblierungs- und Materialkonzepte</li>
+        <li class="reveal d4">Repräsentative Eingangs- und Empfangsbereiche</li>
+      </ul>
+      <div style="margin-top:34px" class="reveal">
+        <a class="btn dark" href="#kontakt">Musterausbau anfragen <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUSTAINABILITY ============ -->
+<section class="section sustain" id="nachhaltigkeit">
+  <div class="wrap">
+    <span class="eyebrow reveal">Nachhaltigkeit</span>
+    <h2 class="reveal d1">Neue Massstäbe<br>im historischen Denkmal.</h2>
+    <p class="lead reveal d2">Die Sanierung folgt konsequent dem Kreislauf-Gedanken: kreislauffähige Materialien,
+      erneuerbare Energie und ein energieeffizienter Betrieb machen das Haus fit für die
+      nächsten hundert Jahre.</p>
+    <div class="sus-grid">
+      <div class="sus-card reveal">
+        <div class="ico"><svg viewBox="0 0 48 48"><path d="M24 6a18 18 0 1 0 18 18"/><path d="M42 10l-8 2 2 8"/><path d="M42 10A18 18 0 0 0 24 6"/></svg></div>
+        <h3>Cradle to Cradle</h3>
+        <p>Sanierung nach Kreislauf-Prinzipien — Materialien werden so eingesetzt, dass sie wiederverwendbar bleiben.</p>
+      </div>
+      <div class="sus-card reveal d1">
+        <div class="ico"><svg viewBox="0 0 48 48"><path d="M6 30c6-4 12-4 18 0s12 4 18 0"/><path d="M6 38c6-4 12-4 18 0s12 4 18 0"/><path d="M24 6v16"/><path d="M17 15l7 7 7-7"/></svg></div>
+        <h3>Seewasser-Energie</h3>
+        <p>Nachhaltiges Heizen und Kühlen mit Seewasser — komfortabel im Sommer wie im Winter, ohne fossile Energie.</p>
+      </div>
+      <div class="sus-card reveal d2">
+        <div class="ico"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M38.1 9.9l-4.2 4.2M14.1 33.9l-4.2 4.2"/></svg></div>
+        <h3>Photovoltaik</h3>
+        <p>Eigene PV-Anlage auf dem Dach — Mieterinnen und Mieter beziehen Solarstrom direkt vom Gebäude.</p>
+      </div>
+      <div class="sus-card reveal d3">
+        <div class="ico"><svg viewBox="0 0 48 48"><path d="M8 40V20L24 8l16 12v20"/><path d="M18 40v-12h12v12"/><path d="M4 40h40"/></svg></div>
+        <h3>BREEAM «Very Good»</h3>
+        <p>Zertifizierung nach BREEAM In-Use mit Rating «Very Good» — für hohe Energieeffizienz und umweltschonenden Betrieb.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="section location" id="lage">
+  <div class="wrap">
+    <span class="eyebrow reveal">Lage &amp; Erreichbarkeit</span>
+    <h2 class="reveal d1">Zwischen Limmat<br>und Bahnhofstrasse.</h2>
+    <div class="loc-grid">
+      <div>
+        <div class="loc-photo reveal d1">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&q=80" alt="Städtische Skyline am Wasser in der Abenddämmerung" loading="lazy">
+        </div>
+        <p class="reveal d2">Perfekt positioniert am Münsterhof gehört die Fraumünsterpost zu den prestigeträchtigsten
+          Adressen Zürichs. Stadthausquai, Paradeplatz und Hauptbahnhof liegen in Gehdistanz —
+          Kundschaft und Mitarbeitende erreichen das Haus mühelos mit dem öffentlichen Verkehr.</p>
+        <p class="reveal d3">Dank direkter S-Bahn-Anbindung ist der Flughafen Zürich in rund 20 Minuten erreichbar.
+          Zug und Winterthur liegen unter 30 Minuten entfernt, Basel und Bern rund eine Stunde.</p>
+      </div>
+      <div>
+        <div class="transit reveal d2" aria-label="Reisezeiten mit öffentlichem Verkehr">
+          <div class="t-row"><div class="dest">Paradeplatz<small>zu Fuss</small></div><div class="time">3<small> min</small></div></div>
+          <div class="t-row"><div class="dest">Zürich Hauptbahnhof<small>zu Fuss / Tram</small></div><div class="time">10<small> min</small></div></div>
+          <div class="t-row"><div class="dest">Flughafen Zürich<small>S-Bahn direkt</small></div><div class="time">20<small> min</small></div></div>
+          <div class="t-row"><div class="dest">Zug &amp; Winterthur<small>Bahn</small></div><div class="time">&lt;30<small> min</small></div></div>
+          <div class="t-row"><div class="dest">Basel &amp; Bern<small>Bahn</small></div><div class="time">~60<small> min</small></div></div>
+        </div>
+        <div class="addr-card reveal d4">
+          <div class="pin"><svg viewBox="0 0 40 40"><path d="M20 37s13-11.4 13-21A13 13 0 0 0 7 16c0 9.6 13 21 13 21z"/><circle cx="20" cy="16" r="4.5"/></svg></div>
+          <div>
+            <b class="serif" style="font-size:1.25rem;display:block">Fraumünsterpost</b>
+            <span style="font-size:.9rem;color:rgba(245,240,230,.8)">Kappelergasse / Münsterhof · 8001 Zürich</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class="section quote">
+  <div class="qbg" aria-hidden="true"></div>
+  <div class="wrap reveal">
+    <span class="mark">«</span>
+    <blockquote>Moderne Büroflächen im historischen Wahrzeichen, an Zürichs exklusivster Adresse —
+      flexibel, nachhaltig und einzigartig.</blockquote>
+    <p class="who">Vermarktung · Fraumünsterpost Zürich</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="kontakt">
+  <div class="wrap con-grid">
+    <div>
+      <span class="eyebrow reveal">Kontakt</span>
+      <h2 class="reveal d1">Sichern Sie sich Ihre<br>neue Geschäftsadresse.</h2>
+      <p class="reveal d2">Interessiert an Büroflächen in einem der architektonisch bedeutendsten Gebäude Zürichs?
+        Wir freuen uns auf das persönliche Gespräch — und zeigen Ihnen gerne Exposé,
+        Grundriss-Factsheets und Musterplanungen.</p>
+      <div class="con-details reveal d3">
+        <div><b>Adresse</b><span>Münsterhof · 8001 Zürich</span></div>
+        <div><b>Vermietung</b><span>Vermarktungsteam Fraumünsterpost</span></div>
+        <div><b>E-Mail</b><span>vermietung@ihre-domain.ch</span></div>
+        <div><b>Telefon</b><span>+41 44 000 00 00</span></div>
+      </div>
+    </div>
+    <form class="reveal d2" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('thanks').style.display='block'">
+      <div class="field"><label for="f-name">Name *</label><input id="f-name" type="text" required autocomplete="name"></div>
+      <div class="field"><label for="f-firm">Firma</label><input id="f-firm" type="text" autocomplete="organization"></div>
+      <div class="field"><label for="f-mail">E-Mail *</label><input id="f-mail" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="f-size">Gewünschte Fläche</label>
+        <select id="f-size">
+          <option>ab 390 m²</option>
+          <option>390 – 800 m²</option>
+          <option>800 – 1'490 m²</option>
+          <option>Mehrere Etagen</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Nachricht</label><textarea id="f-msg" placeholder="Ihre Anfrage…"></textarea></div>
+      <p class="form-note">Mit dem Absenden stimmen Sie der Bearbeitung Ihrer Angaben zur Kontaktaufnahme zu.</p>
+      <button class="btn solid" type="submit">Anfrage senden <span class="arr">→</span></button>
+    </form>
+    <div id="thanks" style="display:none">
+      <p class="serif" style="font-size:1.6rem;color:var(--gold-light)">Herzlichen Dank für Ihre Anfrage.</p>
+      <p style="color:rgba(245,240,230,.8);margin-top:10px">Wir melden uns persönlich bei Ihnen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer>
   <div class="foot-grid">
-    <a class="logo" href="index.html"><span class="l1">Fraumünsterpost</span><span class="l2">Zürich · Seit 1898</span></a>
+    <a class="logo" href="#top"><span class="l1">Fraumünsterpost</span><span class="l2">Zürich · Seit 1898</span></a>
     <nav aria-label="Fussnavigation">
-      <a href="index.html#geschichte">Geschichte</a>
-      <a href="index.html#flaechen">Flächen</a>
-      <a href="index.html#ausbau">Ausbau</a>
-      <a href="index.html#nachhaltigkeit">Nachhaltigkeit</a>
-      <a href="index.html#lage">Lage</a>
-      <a href="index.html#kontakt">Kontakt</a>
+      <a href="#geschichte">Geschichte</a>
+      <a href="#flaechen">Flächen</a>
+      <a href="#ausbau">Ausbau</a>
+      <a href="#nachhaltigkeit">Nachhaltigkeit</a>
+      <a href="#lage">Lage</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
   </div>
   <div class="foot-line">
     <span>© <span id="yr">2026</span> Fraumünsterpost — Konzeptseite. Symbolbilder: Unsplash. Alle Angaben ohne Gewähr.</span>
-    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    <span><a href="impressum.html" style="text-decoration:none">Impressum</a> · <a href="datenschutz.html" style="text-decoration:none">Datenschutz</a></span>
   </div>
 </footer>
 
+<!-- ============ SCRIPTS ============ -->
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+/* ---------- Elegante 3D-Arkaden im Hero ---------- */
+const host = document.getElementById('hero3d');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0x152a25, 14, 46);
+const camera = new THREE.PerspectiveCamera(50, 1, .1, 100);
+camera.position.set(0, 1.2, 16);
+
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+host.appendChild(renderer.domElement);
+
+const gold = 0xd6bd8a;
+const group = new THREE.Group();
+scene.add(group);
+
+function makeArch(){
+  const g = new THREE.Group();
+  const arc = new THREE.Mesh(
+    new THREE.TorusGeometry(1.6, .022, 8, 60, Math.PI),
+    new THREE.MeshBasicMaterial({ color: gold, transparent:true, opacity:.85 })
+  );
+  arc.position.y = 1.4;
+  g.add(arc);
+  const colGeo = new THREE.CylinderGeometry(.022,.03, 2.8, 10);
+  const colMat = new THREE.MeshBasicMaterial({ color: gold, transparent:true, opacity:.7 });
+  const c1 = new THREE.Mesh(colGeo, colMat); c1.position.set(-1.6, 0, 0);
+  const c2 = new THREE.Mesh(colGeo, colMat); c2.position.set( 1.6, 0, 0);
+  g.add(c1, c2);
+  return g;
+}
+for (let i = 0; i < 9; i++){
+  const a = makeArch();
+  a.position.set(0, -1.4, -i * 3.2);
+  const s = 1 + i * .12;
+  a.scale.set(s, s, 1);
+  group.add(a);
+}
+
+/* Goldstaub-Partikel */
+const N = 420;
+const pos = new Float32Array(N * 3);
+for (let i = 0; i < N; i++){
+  pos[i*3]   = (Math.random() - .5) * 26;
+  pos[i*3+1] = (Math.random() - .5) * 12;
+  pos[i*3+2] = -Math.random() * 34 + 4;
+}
+const pGeo = new THREE.BufferGeometry();
+pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+const points = new THREE.Points(pGeo, new THREE.PointsMaterial({
+  color: gold, size:.05, transparent:true, opacity:.6, depthWrite:false
+}));
+scene.add(points);
+
+/* Sanfter Parallax */
+let mx = 0, my = 0, tx = 0, ty = 0;
+addEventListener('pointermove', e => {
+  tx = (e.clientX / innerWidth - .5);
+  ty = (e.clientY / innerHeight - .5);
+}, { passive:true });
+
+const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+const start = performance.now();
+
+function frame(now){
+  const t = (now - start) / 1000;
+  const k = ease(Math.min(t / 3.5, 1));   /* Intro-Kamerafahrt easeInOutCubic */
+  camera.position.z = 20 - k * 6;
+  mx += (tx - mx) * .04; my += (ty - my) * .04;
+  camera.position.x = mx * 1.6;
+  camera.position.y = 1.2 - my * 1.0;
+  camera.lookAt(0, .4, -8);
+  if (!reduced){
+    group.position.z = (t * .55) % 3.2;   /* endloser Arkaden-Flug */
+    points.rotation.y = t * .02;
+  }
+  renderer.render(scene, camera);
+  requestAnimationFrame(frame);
+}
+
+/* ResizeObserver + garantiertes erstes Frame */
+function size(){
+  const w = host.clientWidth || innerWidth, h = host.clientHeight || innerHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.render(scene, camera);
+}
+new ResizeObserver(size).observe(host);
+size();
+requestAnimationFrame(frame);
+</script>
 <script>
+/* Header-Zustand */
+const header = document.getElementById('header');
+addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 40), { passive:true });
+
+/* Mobile-Nav schliessen bei Klick */
 document.querySelectorAll('nav.main a').forEach(a =>
   a.addEventListener('click', () => document.body.classList.remove('nav-open')));
+
+/* Scroll-Reveal */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold:.14 });
+document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
+
+/* Zähler-Animation */
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, to = +el.dataset.to, t0 = performance.now(), dur = 1600;
+  (function tick(now){
+    const p = Math.min((now - t0) / dur, 1), v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+    el.textContent = v.toLocaleString('de-CH').replace(/,/g, "'");
+    if (p < 1) requestAnimationFrame(tick);
+  })(t0);
+  cio.unobserve(el);
+}), { threshold:.6 });
+document.querySelectorAll('.count').forEach(el => cio.observe(el));
+
 document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>

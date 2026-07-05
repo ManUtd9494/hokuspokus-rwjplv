@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum — Fraumünsterpost Zürich</title>
+<meta name="description" content="Impressum der Website Fraumünsterpost Zürich.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1e3a33;--green-deep:#152a25;--cream:#f5f0e6;--cream-2:#ede6d6;
+  --gold:#b3945e;--gold-light:#d6bd8a;--ink:#1c2320;--grey:#6f7a74;
+  --line:rgba(30,58,51,.16);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;font-weight:300}
+::selection{background:var(--gold);color:#fff}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;line-height:1.12}
+a{color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 6vw}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;text-transform:uppercase;letter-spacing:.34em;font-size:.72rem;font-weight:500;color:var(--gold)}
+.eyebrow::before{content:"";width:44px;height:1px;background:var(--gold)}
+
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(21,42,37,.96);backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(0,0,0,.2)}
+header .bar{display:flex;align-items:center;justify-content:space-between;padding:16px 6vw}
+.logo{display:flex;flex-direction:column;text-decoration:none;color:var(--cream);line-height:1.05}
+.logo .l1{font-family:var(--serif);font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase}
+.logo .l2{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-light);margin-top:4px}
+nav.main{display:flex;gap:38px;align-items:center}
+nav.main a{color:var(--cream);text-decoration:none;text-transform:uppercase;font-size:.72rem;letter-spacing:.26em;font-weight:400;position:relative;padding:6px 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold-light);transition:width .35s}
+nav.main a:hover::after{width:100%}
+nav.main .cta{border:1px solid var(--gold);padding:10px 22px;color:var(--gold-light)}
+nav.main .cta::after{display:none}
+nav.main .cta:hover{background:var(--gold);color:#fff}
+.burger{display:none;background:none;border:0;cursor:pointer;z-index:120;width:34px;height:24px;position:relative}
+.burger span{position:absolute;left:0;width:100%;height:1.5px;background:var(--cream);transition:.35s}
+.burger span:nth-child(1){top:2px}.burger span:nth-child(2){top:11px}.burger span:nth-child(3){top:20px}
+body.nav-open .burger span:nth-child(1){top:11px;transform:rotate(45deg)}
+body.nav-open .burger span:nth-child(2){opacity:0}
+body.nav-open .burger span:nth-child(3){top:11px;transform:rotate(-45deg)}
+@media(max-width:980px){
+  nav.main{position:fixed;inset:0;background:var(--green-deep);flex-direction:column;justify-content:center;gap:30px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.3,1)}
+  body.nav-open nav.main{transform:none}
+  nav.main a{font-size:1rem}
+  .burger{display:block}
+}
+
+/* Page hero */
+.page-hero{background:radial-gradient(120% 100% at 50% 0%,#28473f 0%,var(--green-deep) 70%);color:var(--cream);padding:170px 0 80px;text-align:left;position:relative}
+.page-hero::after{content:"";position:absolute;inset:22px;border:1px solid rgba(214,189,138,.18);pointer-events:none}
+.page-hero h1{font-size:clamp(2.4rem,6vw,4.2rem);text-transform:uppercase;letter-spacing:.05em;margin-top:20px}
+.page-hero .kicker{text-transform:uppercase;letter-spacing:.5em;font-size:.72rem;color:var(--gold-light)}
+
+/* Content */
+.legal{padding:clamp(70px,9vw,120px) 0}
+.legal section{margin-bottom:54px}
+.legal h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--green);margin-bottom:16px}
+.legal h2 .no{color:var(--gold);font-size:.8em;margin-right:14px}
+.legal p{color:#3d4a44;margin-bottom:14px;max-width:70ch}
+.legal ul{margin:0 0 14px 20px;color:#3d4a44}
+.legal ul li{margin-bottom:8px}
+.card{background:#fff;border:1px solid var(--line);padding:34px 36px;margin:20px 0}
+.card b{font-weight:500;color:var(--green)}
+.card .lbl{display:block;font-size:.64rem;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);margin:16px 0 4px}
+.card .lbl:first-child{margin-top:0}
+.hint{border-left:2px solid var(--gold);background:var(--cream-2);padding:18px 24px;font-size:.9rem;color:#4a554f;margin:20px 0}
+.backlink{display:inline-flex;align-items:center;gap:12px;margin-top:30px;padding:14px 30px;border:1px solid var(--green);color:var(--green);text-decoration:none;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;transition:background .35s,color .35s}
+.backlink:hover{background:var(--green);color:var(--cream)}
+
+/* Footer */
+footer{background:#0e1f1a;color:rgba(245,240,230,.65);padding:60px 6vw 40px}
+.foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:center}
+footer .logo .l1{font-size:1.1rem}
+footer nav{display:flex;gap:26px;flex-wrap:wrap}
+footer nav a{text-decoration:none;font-size:.7rem;text-transform:uppercase;letter-spacing:.24em}
+footer nav a:hover{color:var(--gold-light)}
+.foot-line{margin-top:40px;padding-top:24px;border-top:1px solid rgba(214,189,138,.15);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.72rem}
+.foot-line a{text-decoration:none}
+.foot-line a:hover{color:var(--gold-light)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="index.html" aria-label="Fraumünsterpost — Startseite">
+      <span class="l1">Fraumünsterpost</span>
+      <span class="l2">Zürich · Seit 1898</span>
+    </a>
+    <button class="burger" aria-label="Menü öffnen" onclick="document.body.classList.toggle('nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="index.html#geschichte">Geschichte</a>
+      <a href="index.html#flaechen">Flächen</a>
+      <a href="index.html#ausbau">Ausbau</a>
+      <a href="index.html#nachhaltigkeit">Nachhaltigkeit</a>
+      <a href="index.html#lage">Lage</a>
+      <a href="index.html#kontakt" class="cta">Besichtigung</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Rechtliches</span>
+    <h1>Impressum</h1>
+  </div>
+</div>
+
+<main class="legal">
+  <div class="wrap">
+
+    <section>
+      <h2><span class="no">01</span>Verantwortlich für diese Website</h2>
+      <div class="card">
+        <span class="lbl">Betreiberin</span>
+        <b>[Firma / Eigentümerschaft eintragen]</b><br>
+        [Strasse und Nummer]<br>
+        [PLZ Ort], Schweiz
+        <span class="lbl">Kontakt</span>
+        E-Mail: vermietung@ihre-domain.ch<br>
+        Telefon: +41 44 000 00 00
+        <span class="lbl">Handelsregister / UID</span>
+        UID: CHE-000.000.000 <em>(Platzhalter)</em>
+      </div>
+      <div class="hint">Hinweis: Die Angaben in eckigen Klammern sind Platzhalter und müssen vor dem
+        produktiven Einsatz durch die tatsächlichen Angaben der verantwortlichen Gesellschaft ersetzt werden.</div>
+    </section>
+
+    <section>
+      <h2><span class="no">02</span>Vermarktung</h2>
+      <div class="card">
+        <span class="lbl">Vermietung &amp; Anfragen</span>
+        Vermarktungsteam Fraumünsterpost<br>
+        Münsterhof · 8001 Zürich<br>
+        E-Mail: vermietung@ihre-domain.ch
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="no">03</span>Haftungsausschluss</h2>
+      <p>Alle Inhalte dieser Website wurden mit grösstmöglicher Sorgfalt erstellt. Die Betreiberin
+        übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der
+        bereitgestellten Inhalte. Flächenangaben, Verfügbarkeiten, Visualisierungen und Termine
+        sind unverbindlich und können sich ohne Ankündigung ändern; massgeblich sind ausschliesslich
+        die vertraglichen Vereinbarungen.</p>
+      <p>Haftungsansprüche gegen die Betreiberin wegen Schäden materieller oder immaterieller Art,
+        die aus dem Zugriff auf die Website, der Nutzung oder Nichtnutzung der veröffentlichten
+        Informationen oder durch technische Störungen entstanden sind, werden im gesetzlich
+        zulässigen Umfang ausgeschlossen.</p>
+    </section>
+
+    <section>
+      <h2><span class="no">04</span>Verweise auf Drittinhalte (Links)</h2>
+      <p>Verweise und Links auf Websites Dritter liegen ausserhalb des Verantwortungsbereichs der
+        Betreiberin. Der Zugriff und die Nutzung solcher Websites erfolgen auf eigene Gefahr der
+        Nutzerinnen und Nutzer. Es wird jegliche Verantwortung für Inhalte Dritter abgelehnt.</p>
+    </section>
+
+    <section>
+      <h2><span class="no">05</span>Urheberrechte</h2>
+      <p>Die Urheber- und alle anderen Rechte an Inhalten, Texten, Grafiken und Gestaltung dieser
+        Website gehören ausschliesslich der Betreiberin oder den jeweils genannten Rechteinhabern.
+        Verwendete Symbolbilder stammen von Unsplash und unterliegen der Unsplash-Lizenz.
+        Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Rechteinhaber
+        im Voraus einzuholen.</p>
+    </section>
+
+    <section>
+      <h2><span class="no">06</span>Anwendbares Recht</h2>
+      <p>Es gilt ausschliesslich schweizerisches Recht. Gerichtsstand ist — soweit gesetzlich
+        zulässig — Zürich.</p>
+      <a class="backlink" href="index.html">← Zurück zur Startseite</a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <a class="logo" href="index.html"><span class="l1">Fraumünsterpost</span><span class="l2">Zürich · Seit 1898</span></a>
+    <nav aria-label="Fussnavigation">
+      <a href="index.html#geschichte">Geschichte</a>
+      <a href="index.html#flaechen">Flächen</a>
+      <a href="index.html#ausbau">Ausbau</a>
+      <a href="index.html#nachhaltigkeit">Nachhaltigkeit</a>
+      <a href="index.html#lage">Lage</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+  </div>
+  <div class="foot-line">
+    <span>© <span id="yr">2026</span> Fraumünsterpost — Konzeptseite. Symbolbilder: Unsplash. Alle Angaben ohne Gewähr.</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('nav.main a').forEach(a =>
+  a.addEventListener('click', () => document.body.classList.remove('nav-open')));
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
